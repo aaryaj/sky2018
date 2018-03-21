@@ -1,0 +1,17 @@
+
+
+
+JSP lifecycle methods are:
+
+jspInit(): This method is declared in JspPage and it’s implemented by JSP container implementations.
+This method is called once in the JSP lifecycle to initialize it with config params configured in deployment descriptor.
+We can override this method using JSP declaration scripting element to initialize any resources that we want to use in JSP page.
+
+jspService(): This is the JSP method that gets invoked by JSP container for each client request by passing request
+and response object. Notice that method name starts with underscore to distinguish it from other lifecycle methods 
+because we can’t override this method. All the JSP code goes inside this method and it’s overridden by default.
+We should not try to override it using JSP declaration scripting element. This method is defined in HttpJspPage interface.
+
+jspDestroy(): This method is called by container when JSP is unloaded from memory such as shutting down application or container.
+This method is called only once in JSP lifecycle and we should override this method to release any resources
+created in JSP init method.
