@@ -4,6 +4,8 @@ How do I add local jar files (not yet part of the Maven repository) directly in 
 
 Ans is:
 
+(1)
+
 Install the JAR into your local Maven repository as follows:
 
 mvn install:install-file
