@@ -1,3 +1,15 @@
 
 
 How do I add local jar files (not yet part of the Maven repository) directly in my project's library sources?
+
+Ans is:
+
+Install the JAR into your local Maven repository as follows:
+
+mvn install:install-file
+   -Dfile=<path-to-file>
+   -DgroupId=<group-id>
+   -DartifactId=<artifact-id>
+   -Dversion=<version>
+   -Dpackaging=<packaging>
+   -DgeneratePom=true
